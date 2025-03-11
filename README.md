@@ -1,5 +1,5 @@
 # Introduction to HTML, CSS and javascript
-without using frameworks
+Without using frameworks
 
 Run the presentation with go present:
 https://golang.org/x/tools/cmd/present

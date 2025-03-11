@@ -8,7 +8,7 @@ siuyin@beyondbroadcast.com
 
 
 ## Just HTML and the browser
-Create this `index.html` file:
+Create this [index.html](https://github.com/siuyin/intro-html-css-js/blob/main/001/index.html) file:
 
 .code 001/index.html
 
@@ -24,15 +24,16 @@ Also note the brower defaults to a serif font for body text.
 
 
 ## Let's introduce some styling to make the font san-serif
-index.html:
+[index.html](https://github.com/siuyin/intro-html-css-js/blob/main/002/index.html):
 
 .code -numbers 002/index.html
 
-I added line 6 to link in an external stylesheet: `main.css`
+I added line 6 to link in an external stylesheet:
+[main.css](https://github.com/siuyin/intro-html-css-js/blob/main/002/main.css)
 
 
 ## This is the stylesheet file
-main.css:
+[main.css](https://github.com/siuyin/intro-html-css-js/blob/main/002/main.css):
 
 .code -numbers 002/main.css
 Semicolons are needed in a stylesheet file to separate styling entries.
@@ -43,6 +44,8 @@ Semicolons are needed in a stylesheet file to separate styling entries.
 
 
 ## Adding a header
+[index.html](https://github.com/siuyin/intro-html-css-js/blob/main/003/index.html):
+
 .code -numbers 003/index.html
 
 Headers in HTML are `<h1>, <h2>, ...` .
@@ -50,7 +53,9 @@ Headers in HTML are `<h1>, <h2>, ...` .
 I added a `<h1>` on line 10.
 
 
-## Let's style paragraphs render
+## Let's style paragraphs red
+[main.css](https://github.com/siuyin/intro-html-css-js/blob/main/003/main.css):
+
 .code -numbers 003/main.css
 
 See lines 7 through 9. They style `<p>` elements red in color.
@@ -61,7 +66,7 @@ See lines 7 through 9. They style `<p>` elements red in color.
 
 
 ## Adding interaction with javascript
-Let us add a clickable element within the <html> / <body> :
+Let us add a clickable element within the `<html> / <body>` :
 
 .code 004/index.html /dim-mode:/,/$/
 
@@ -71,6 +76,7 @@ thus:
 
 
 ## Add the javascript
+[index.html](https://github.com/siuyin/intro-html-css-js/blob/main/004/index.html)
 
 .code 004/index.html /script/,/\/script/
 
@@ -112,7 +118,7 @@ and assigns that element to the block-scoped constant `cb`.
 
 .code 004/index.html /const cb/,/$/
 
-Block-scoped means **cb** is only valid between the function's opening **{**
+Block-scoped means **cb** is only defined between the function's opening **{**
 and closing **}** braces.
 
 
