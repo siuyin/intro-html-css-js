@@ -80,6 +80,8 @@ thus:
 
 .code 004/index.html /script/,/\/script/
 
+Semicolons **;** are optional (implied) in javascript. Thus I choose to leave them out.
+
 
 ## Clicking on the checkbox
 .image 004/img/clicked.png
