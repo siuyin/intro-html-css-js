@@ -1,0 +1,17 @@
+body {
+    font-family: sans-serif;
+    font-size: x-large;
+    color: royalblue;
+}
+
+p {
+    color: red;
+}
+p.dim {
+    color: lightgoldenrodyellow;
+}
+
+.dim {
+    color:ghostwhite;
+    background-color: darkgray;
+}

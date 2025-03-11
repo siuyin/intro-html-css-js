@@ -1,0 +1,125 @@
+# Introduction to HTML, CSS and javascript
+without using frameworks
+11 Mar 2025
+
+Loh Siu Yin
+Technology Consultant, Beyond Broadcast LLP
+siuyin@beyondbroadcast.com
+
+
+## Just HTML and the browser
+Create this `index.html` file:
+
+.code 001/index.html
+
+save it and open the file with a browser
+
+
+## This is what I see on my browser
+.image 001/img/hello.png
+
+High resolution screens render the text in rather small font.
+
+Also note the brower defaults to a serif font for body text.
+
+
+## Let's introduce some styling to make the font san-serif
+index.html:
+
+.code -numbers 002/index.html
+
+I added line 6 to link in an external stylesheet: `main.css`
+
+
+## This is the stylesheet file
+main.css:
+
+.code -numbers 002/main.css
+Semicolons are needed in a stylesheet file to separate styling entries.
+
+
+## And the result on my browser
+.image 002/img/hello.png
+
+
+## Adding a header
+.code -numbers 003/index.html
+
+Headers in HTML are `<h1>, <h2>, ...` .
+
+I added a `<h1>` on line 10.
+
+
+## Let's style paragraphs render
+.code -numbers 003/main.css
+
+See lines 7 through 9. They style `<p>` elements red in color.
+
+
+## The result on my browser
+.image 003/img/hello.png
+
+
+## Adding interaction with javascript
+Let us add a clickable element within the <html> / <body> :
+
+.code 004/index.html /dim-mode:/,/$/
+
+thus:
+
+.image 004/img/hello.png
+
+
+## Add the javascript
+
+.code 004/index.html /script/,/\/script/
+
+
+## Clicking on the checkbox
+.image 004/img/clicked.png
+
+
+## javascript click handler
+.code -numbers 004/index.html /function dimModeHandler/,/dimModeHandler\(\)$/
+
+lines 18 through 31 **define** the function.
+
+line 32 is where the function is **called** and becomes active.
+
+
+## Declaring a function
+The function keyword declares a function. In this case it is
+named dimModeHandler.
+
+.code 004/index.html /function dimModeHandler/,/$/
+
+An alternative way to declare a function in javascript is:
+
+```
+const dimModeHandler = () => { 
+```
+
+The above assigns an un-named function `() => { ... }` to the
+constant name `dimModeHandler`. 
+
+
+## Getting a DOM element
+When you load a `html` file into a browser, it analyzes the file
+and creates a model or representation of it in your computer's memory.
+
+The line below gets an element identified with "dim-cb" (dim checkbox)
+and assigns that element to the block-scoped constant `cb`.
+
+.code 004/index.html /const cb/,/$/
+
+Block-scoped means **cb** is only valid between the function's opening **{**
+and closing **}** braces.
+
+
+## querySelectorAll returns a list of elements
+.code 004/index.html /const allPara/,/$/
+
+`query` above refers to a **CSS** querySelector.
+
+**querySelectorAll** in this case returns all **\<p\>** (paragraph) elements.
+
