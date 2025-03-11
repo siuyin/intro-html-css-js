@@ -155,5 +155,36 @@ If not, we remove the **dim** class.
 ## dim class
 [main.css](https://github.com/siuyin/intro-html-css-js/blob/main/004/main.css)
 
-
 .code 004/main.css /class="dim"/,/dim class/
+
+
+## Layouts with CSS
+
+
+## Semantic HTML
+The are main parts to the html content:
+* **nav**: navigation
+* **section**: the main content text
+* **footer**: footer carrying, say, copyright info
+
+.code 005/index.html /main-content/,/footer/
+
+
+## main content is placed on a row
+.code 005/main.css /main-content/,/}/
+
+The default direction for a flex layout is **row**.
+
+Thus **nav** and **section** are placed on a row.
+
+Elements within **nav** however, are placed in a column.
+
+.code 005/main.css /nav/,/}/
+
+**footer** follows the main content row.
+
+
+## The resulting layout
+.image 005/img/fruit.png
+
+.image 005/img/lorem.png  _ 1000

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Title</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="main-content">
+        <nav>
+            <a href="/apples">apples</a>
+            <a href="/pears">pears</a>
+            <a href="/oranges">oranges</a>
+        </nav>
+
+        <section data-fruit>Click on the links to show a fruit.</section>
+    </div>
+
+    <footer>copyright &copy; 2025 Beyond Broadcast LLP</footer>
+
+    <script type="module">
+        const loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id ipsum magna. Phasellus vitae posuere purus. Vivamus blandit aliquam elit vel congue. Donec suscipit scelerisque sapien id fermentum. Fusce pellentesque accumsan nisl eu imperdiet. Suspendisse a luctus urna. Suspendisse dapibus neque id gravida malesuada. Maecenas ut metus dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec lectus est, dapibus ut est dapibus, porttitor iaculis sapien. Pellentesque sollicitudin neque arcu, ac semper diam molestie ac. Cras dignissim congue lorem, vitae interdum neque molestie et. Praesent blandit rhoncus lobortis. Curabitur congue ornare ipsum, eget auctor odio consectetur ut.  Sed fermentum dui nisi, non venenatis dolor viverra a. In hac habitasse platea dictumst. Sed facilisis orci non tempor euismod. In tincidunt maximus lobortis. Sed lacinia urna quis est accumsan, non mollis lectus faucibus. Donec sed diam in ante sodales dictum. Proin id lacinia ligula. Sed ornare egestas dui, quis euismod neque volutpat ut. Aenean in blandit est. Ut pretium sapien ut mi ullamcorper congue.  "
+        function navHandler() {
+            const nav = document.querySelectorAll("nav a")
+            const fs = document.querySelector("[data-fruit]")
+            nav.forEach((a) => {
+                a.addEventListener("click", (ev) => {
+                    ev.preventDefault()
+                    fs.innerHTML = ""
+                    const hdr = document.createElement("h2")
+                    hdr.textContent = ev.target.textContent
+                    fs.append(hdr, loremIpsum)
+                })
+            })
+
+        }
+        navHandler()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif;
+    font-size: x-large;
+}
+
+#main-content {
+    display: flex;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+}
+
+section {
+    margin-left: 16px;
+    margin-right: 32px;
+}
+
+section h2 {
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+footer {
+    margin-top: 8px;
+    text-align: center;
+    font-size: small;
+}
