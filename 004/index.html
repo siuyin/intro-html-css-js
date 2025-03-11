@@ -13,8 +13,6 @@
         dim-mode: <input type="checkbox" id="dim-cb" />
     </section>
     <script type="module">
-        console.log("hello javascript")
-
         function dimModeHandler() {
             const cb = document.getElementById("dim-cb")
             const allPara = document.querySelectorAll("p")
@@ -26,7 +24,6 @@
                 }
                 document.body.classList.remove("dim")
                 allPara.forEach((p) => { p.classList.remove("dim") })
-                console.log("checkbox clicked")
             })
         }
         dimModeHandler()

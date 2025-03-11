@@ -88,9 +88,9 @@ thus:
 ## javascript click handler
 .code -numbers 004/index.html /function dimModeHandler/,/dimModeHandler\(\)$/
 
-lines 18 through 31 **define** the function.
+lines 16 through 28 **define** the function.
 
-line 32 is where the function is **called** and becomes active.
+line 29 is where the function is **called** and becomes active.
 
 
 ## Declaring a function
@@ -129,3 +129,29 @@ and closing **}** braces.
 
 **querySelectorAll** in this case returns all **\<p\>** (paragraph) elements.
 
+
+## addEventListener to the checkbox element
+.code 004/index.html /cb.addEventListener/,/$/
+
+The above line attaches an un-named function `() => { ... }` to the **cb**
+element.
+
+This function is called each time the **cb** checkbox is clicked.
+
+
+## Adding and removing CSS classes
+.code -numbers 004/index.html /cb.addEventListener/,/^ +}\)$/
+
+On line 20, we check if the checkbox is **checked** or not.
+
+If the checkbox is **checked**, we add the **dim** class to the **body**
+and all **p** elements.
+
+If not, we remove the **dim** class.
+
+
+## dim class
+[main.css](https://github.com/siuyin/intro-html-css-js/blob/main/004/main.css)
+
+
+.code 004/main.css /class="dim"/,/dim class/
