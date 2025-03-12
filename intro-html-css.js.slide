@@ -155,7 +155,7 @@ If not, we remove the **dim** class.
 ## dim class
 [main.css](https://github.com/siuyin/intro-html-css-js/blob/main/004/main.css)
 
-.code 004/main.css /class="dim"/,/dim class/
+.code 004/main.css /p {/,/background-color/+1
 
 
 ## Layouts with CSS

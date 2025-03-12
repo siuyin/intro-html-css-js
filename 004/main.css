@@ -4,7 +4,6 @@ body {
     color: royalblue;
 }
 
-/* <p> and <p class="dim"> */
 p {
     color: red;
 }
@@ -16,4 +15,3 @@ p.dim {
     color:ghostwhite;
     background-color: darkgray;
 }
-/* the above applies to any element including body with a dim class */
