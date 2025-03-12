@@ -191,3 +191,13 @@ Elements within **nav** however, are placed in a column.
 .image 005/img/fruit.png
 
 .image 005/img/lorem.png  _ 1000
+
+
+## Fixing browser back and forward buttons
+
+
+## Fixing the back and forward browser buttons
+.code 005/index.html /addEventListener/,/preventDefault/
+
+Clicking on a link without actually navigating to a URL breaks
+the brower's go **back** and **forward** capability.
