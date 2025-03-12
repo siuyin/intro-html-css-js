@@ -167,6 +167,8 @@ The are main parts to the html content:
 * **section**: the main content text
 * **footer**: footer carrying, say, copyright info
 
+[index.html](https://github.com/siuyin/intro-html-css-js/blob/main/005/index.html):
+
 .code 005/index.html /main-content/,/footer/
 
 
@@ -183,6 +185,7 @@ Elements within **nav** however, are placed in a column.
 
 **footer** follows the main content row.
 
+[main.css](https://github.com/siuyin/intro-html-css-js/blob/main/005/main.css)
 
 ## The resulting layout
 .image 005/img/fruit.png
