@@ -201,3 +201,73 @@ Elements within **nav** however, are placed in a column.
 
 Clicking on a link without actually navigating to a URL breaks
 the brower's go **back** and **forward** capability.
+
+To fix this we need to use the **history** web API:
+https://developer.mozilla.org/en-US/docs/Web/API/History_API
+
+But that would not work with directly loading a file into the browser.
+
+.image 006/img/history.png
+
+
+## Serving the web page
+I have included a simple web server in this project.
+To serve the website:
+```
+ cd 006
+
+ ../webserver
+or
+ PORT=8080 ../webserver
+```
+The above commands:
+1. change directory (folder) to 006 where the fixed index.html is located
+2. runs the webserver on `http:localhost:8080`
+
+
+## Updating the nav handler
+.code -numbers 006/index.html /function navHandler/,/}\)/
+
+I introduced a new **basename** function on line 47.
+
+And a **renderPage** function on line 48.
+
+Souce: [index.html](https://github.com/siuyin/intro-html-css-js/blob/main/006/index.html)
+
+## basename
+.code 006/index.html /function basename/,/}/
+
+1. **basename** takes a path
+1. splits it into an array using "/" as a separator
+1. takes the last part
+
+This basename is saved in the **history.pushState** call.
+
+.code 006/index.html /history.pushState/,/$/
+
+for `'http://localhost:8080/apples'`, **apples** is saved when pushState is called.
+
+
+## renderPage
+.code -numbers 006/index.html /function renderPage/,/lorem/+1
+
+Line 26 get the "fruit section"
+
+A new `<h2>` element is inserted
+that has content depending on whether the link is empty or not.
+
+
+## popstate
+The **popstate** event is produced by the browser when a user pushes the
+back or forward buttons on the browser.
+
+We attach a listner to the browser window thus:
+
+.code 006/index.html /popstate/,/}\)/
+
+Recall that ev.state is the basename of the url eg. 'http://localhost:8080/apples' => apples.
+
+CSS selector [a[href*="X"]] means look for an `<a>` element that has a href that contains 'X'
+and return the first match.
+
+Then renderPage is called on the link 'a'.
