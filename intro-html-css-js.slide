@@ -153,7 +153,7 @@ If not, we remove the **dim** class.
 
 
 ## dim class
-[main.css](https://github.com/siuyin/intro-html-css-js/blob/main/004/main.css)
+[main.css](https://github.com/siuyin/intro-html-css-js/blob/main/004/main.css):
 
 .code 004/main.css /p {/,/background-color/+1
 
@@ -271,3 +271,18 @@ CSS selector `a[href*="X"]` means look for an `<a>` element that has a href that
 and return the first match.
 
 Then renderPage is called on the link 'a'.
+
+
+## Custom javascript events
+
+
+## e-commerce example
+Say you have an e-commerce like so:
+
+.image 007/img/ecom.png
+
+How would you get the shopping cart to update each time you click
+on the catalog links?
+
+
+## main html
