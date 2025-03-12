@@ -14,7 +14,7 @@ function shoppingCartHandler() {
         cart.items.forEach((item) => {
             items.push(item.name)
         })
-        sc.textContent = `Shopping Cart: ${cart.n} item | ${items}`
+        sc.textContent = `Shopping Cart: ${cart.n} item(s) | ${items}`
     })
     window.dispatchEvent(new Event("cartupdated"))
 }
