@@ -267,7 +267,7 @@ We attach a listner to the browser window thus:
 
 Recall that ev.state is the basename of the url eg. 'http://localhost:8080/apples' => apples.
 
-CSS selector [a[href*="X"]] means look for an `<a>` element that has a href that contains 'X'
+CSS selector `a[href*="X"]` means look for an `<a>` element that has a href that contains 'X'
 and return the first match.
 
 Then renderPage is called on the link 'a'.
