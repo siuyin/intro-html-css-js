@@ -7,7 +7,7 @@ Technology Consultant, Beyond Broadcast LLP
 siuyin@beyondbroadcast.com
 
 
-## Just HTML and the browser
+## 1. Just HTML and the browser
 Create this [index.html](https://github.com/siuyin/intro-html-css-js/blob/main/001/index.html) file:
 
 .code 001/index.html
@@ -23,7 +23,7 @@ High resolution screens render the text in rather small font.
 Also note the brower defaults to a serif font for body text.
 
 
-## Let's introduce some styling to make the font san-serif
+## 2. Let's introduce some styling to make the font san-serif
 [index.html](https://github.com/siuyin/intro-html-css-js/blob/main/002/index.html):
 
 .code -numbers 002/index.html
@@ -43,7 +43,7 @@ Semicolons are needed in a stylesheet file to separate styling entries.
 .image 002/img/hello.png
 
 
-## Adding a header
+## 3. Adding a header
 [index.html](https://github.com/siuyin/intro-html-css-js/blob/main/003/index.html):
 
 .code -numbers 003/index.html
@@ -65,7 +65,7 @@ See lines 7 through 9. They style `<p>` elements red in color.
 .image 003/img/hello.png
 
 
-## Adding interaction with javascript
+## 4. Adding interaction with javascript
 Let us add a clickable element within the `<html> / <body>` :
 
 .code 004/index.html /dim-mode:/,/$/
@@ -161,7 +161,7 @@ If not, we remove the **dim** class.
 ## Layouts with CSS
 
 
-## Semantic HTML
+## 5. Semantic HTML
 The are main parts to the html content:
 * **nav**: navigation
 * **section**: the main content text
@@ -196,7 +196,7 @@ Elements within **nav** however, are placed in a column.
 ## Fixing browser back and forward buttons
 
 
-## Fixing the back and forward browser buttons
+## 6. Fixing the back and forward browser buttons
 .code 005/index.html /addEventListener/,/preventDefault/
 
 Clicking on a link without actually navigating to a URL breaks
@@ -276,7 +276,7 @@ Then renderPage is called on the link 'a'.
 ## Custom javascript events
 
 
-## e-commerce example
+## 7. e-commerce example
 Say you have an e-commerce like so:
 
 .image 007/img/ecom.png
