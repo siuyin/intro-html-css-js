@@ -27,31 +27,38 @@ function createLink(lnk, txt) {
     return a
 }
 
+function addItemLink(item) {
+    const add = createLink("", "add")
+    add.addEventListener("click", (ev) => {
+        ev.preventDefault()
+        cart.n++
+        cart.items.push(item)
+        window.dispatchEvent(new Event("cartupdated"))
+    })
+    return add
+}
+
+function removeItemLink(item) {
+    const rem = createLink("", "remove")
+    rem.addEventListener("click", (ev) => {
+        ev.preventDefault()
+        let n = cart.items.findIndex((x) => x.id == item.id)
+        if (n < 0) {
+            return
+        }
+        cart.n--
+        cart.items.splice(n, 1)
+        window.dispatchEvent(new Event("cartupdated"))
+    })
+    return rem
+}
+
 function buildCatalogWith(items) {
     const ct = document.querySelector("section#catalog")
     items.forEach((item) => {
         const p = document.createElement("p")
-
-        const add = createLink("", "add")
-        add.addEventListener("click", (ev) => {
-            ev.preventDefault()
-            cart.n++
-            cart.items.push(item)
-            window.dispatchEvent(new Event("cartupdated"))
-        })
-
-        const rem = createLink("", "remove")
-        rem.addEventListener("click", (ev) => {
-            ev.preventDefault()
-            let n = cart.items.findIndex((x) => x.id == item.id)
-            if (n < 0) {
-                return
-            }
-            cart.n--
-            cart.items.splice(n, 1)
-            window.dispatchEvent(new Event("cartupdated"))
-        })
-
+        const add = addItemLink(item)
+        const rem = removeItemLink(item)
         p.append(item.name, " | ", add, " | ", rem)
         ct.append(p)
     })

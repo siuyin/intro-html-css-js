@@ -286,3 +286,49 @@ on the catalog links?
 
 
 ## main html
+[index.html](https://github.com/siuyin/intro-html-css-js/blob/main/007/index.html):
+
+.code 007/index.html /body/,/\/body/
+
+This time we have a separate `main.js` file. 
+
+We can do this because we serving
+the file over http with `'cd 007; ../webserver'` .
+
+
+## Populating the catalog
+.code 007/main.js /async function buildCatalog/,/await buildCatalog/
+
+We build the catalog from data in the catalog.json file.
+`items` contain entries like:
+
+.code 007/catalog.json /\[/,/name/+1
+
+sources: [main.js](https://github.com/siuyin/intro-html-css-js/blob/main/007/main.js),
+[catalog.json](https://github.com/siuyin/intro-html-css-js/blob/main/007/catalog.json)
+
+
+## buildCatalogWith(items)
+.code 007/main.js /buildCatalogWith/,/ct.append/+3
+
+addItemLink and removeItemLink both create `<a>` elements as well as attach event listeners to them.
+
+
+## addItemLink
+.code 007/main.js /let cart/,/}/
+
+.code 007/main.js /addItemLink/,/return/+1
+
+The cart object is updated and a `custom event: 'cartupdated'` is created and published.
+
+
+## Shopping cart handler
+.code 007/main.js /function shoppingCartHandler/,/^shoppingCartHandler/
+
+The handler listens to the custom 'cartupdated' event and updates itself accordingly.
+
+
+## removeItemLink
+.code 007/main.js /removeItemLink/,/^}/
+
+removeItemLink uses findIndex and splice to update cart.items in place.
