@@ -351,7 +351,7 @@ The red header and 'MyBtn' are re-useable web components.
 
 
 ## HTML
-[index.html]():
+[index.html](https://github.com/siuyin/intro-html-css-js/blob/main/008/index.html):
 
 .code -numbers 008/index.html /h1/,/MyBtn/+1
 
@@ -360,7 +360,7 @@ Note the custom components on lines 17 and 19.
 Let see how they are built.
 
 
-## But first let's look at main.css
+## But let's first look at main.css
 .code 008/main.css /button/,/active/+3
 
 .image 008/img/comp.png _ 180
@@ -369,7 +369,7 @@ This is how the big blue button is styled under the 'Main' section.
 
 
 ## Components are built with templates
-and javascript classes
+and javascript classes.
 
 .code 008/index.html /myh2/,/template/
 
@@ -377,25 +377,31 @@ The above template is in index.html. The browser does *not* render templates.
 
 Instead we need to clone and insert the cloned template content via javascript.
 
+source: [index.html](https://github.com/siuyin/intro-html-css-js/blob/main/008/index.html)
+
 
 ## The custom element class
 .code -numbers 008/main.js /my-h2/,/append/+3
 
 
-Line 6 is where a shadow DOM is created and attached to the `<my-h2>` element instance
-created by `constructor()`.
+Line 6 is where a shadow DOM is created and attached  
+to the `<my-h2>` element instance made by `constructor()`.
 
 A shadow DOM is like a regular brower's Domain Object Model except it is hidden away
-(in the shadows). Thus styling within the shadow DOM cannot affect the brower's DOM.
+(in the shadows).  
+Thus styling within the shadow DOM *cannot* affect the brower's DOM.
+
+source: [main.js](https://github.com/siuyin/intro-html-css-js/blob/main/008/main.js)
 
 
 ## Slots
-`<slot>` elements within template are placeholders for content to be slotted-in.
+`<slot>` elements within a template are placeholders for content to be slotted-in.
 
-.code 008/index.html /myh2/,/template/
+.code -numbers 008/index.html /myh2/,/template/
 
-Thus when the browser parses `'<my-h2>My Header</my-h2>'`. The text 'My Header'
-is inserted into the template within the `<slot></slot>` elements.
+Thus when the browser parses `'<my-h2>My Header</my-h2>'`,  
+the text 'My Header' is inserted into the template,  
+within the `<slot></slot>` elements on line 29.
 
 
 ## Named Slots
@@ -407,19 +413,21 @@ template fragment:
 
 .code 008/index.html /name.*label/-3,/\/label/
 
-The text 'MyBtn' slots into the unamed slot. This provides the button text.
+The text 'MyBtn' slots into the unamed slot. This provides the button's text.
 
-'Click Me' get inserted into the `'<slot name="label"></slot>'`
+'Click Me' get inserted into the `'<slot name="label"></slot>'`,  
 forming the button's label.
 
 
 ## main.js reaching into a shadow DOM
-Mode "open" when attaching a shadow DOM allows the brower's DOM to access the shadow DOM.
+Mode "open" when attaching a shadow DOM,  
+allows the brower's DOM to access the shadow DOM.
 
 .code 008/main.js /attachShadow/,/$/
 
-The element hosting the shadow DOM's is the shadow root. It has a shadowRoot property
-that can access the shadow DOM. See line 26 below.
+The element hosting the shadow DOM's is the shadow root.  
+It has a shadowRoot property which can access the shadow DOM.  
+See line 26 below.
 
 .code -numbers 008/main.js /function myBtnHandler/,/myBtnHandler/
 
