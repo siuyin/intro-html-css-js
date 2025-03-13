@@ -7,6 +7,16 @@ Technology Consultant, Beyond Broadcast LLP
 siuyin@beyondbroadcast.com
 
 
+## 0. What I plan to cover
+1. Just HTML and the browser (no server)
+1. Introduce styling via CSS (Cascading Sytle Sheets)
+1. Adding HTML elements and styling them
+1. Adding interaction with javascript
+1. Semantic HTML with sections, footers, articles etc.
+1. Managing Web browser history (back and foward buttons) -- web server required
+1. Custom events applied in an e-commerce demo
+1. Web components and styling
+
 ## 1. Just HTML and the browser
 Create this [index.html](https://github.com/siuyin/intro-html-css-js/blob/main/001/index.html) file:
 
@@ -332,3 +342,7 @@ The handler listens to the custom 'cartupdated' event and updates itself accordi
 .code 007/main.js /removeItemLink/,/^}/
 
 removeItemLink uses findIndex and splice to update cart.items in place.
+
+
+## 8. Web components and styling
+.image 008/img/comp.png

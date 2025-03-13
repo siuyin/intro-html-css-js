@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Components</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Web Components</h1>
+    <section id="main">
+        <h2>Main</h2>
+        <span>styled with main.css</span> <button id="main-btn">Main</button>
+    </section>
+
+    <section id="comp">
+        <my-h2>Component</my-h2>
+        <span>styled within templates</span> <my-btn>MyBtn<span slot="label">Click Me</span></my-btn>
+    </section>
+
+    <template id="myh2">
+        <style>
+            h2 {
+                color: red;
+            }
+        </style>
+        <h2>
+            <slot></slot>
+        </h2>
+    </template>
+
+    <template id="mybtn">
+        <style>
+            button {
+                font-size: xx-large;
+                border-radius: 8px;
+                background-color: lightpink;
+                margin: 0
+            }
+
+            button:active {
+                color: aliceblue;
+                background-color: red
+            }
+
+            label {
+                display: inline-block;
+                margin: 0 1rem 0 1rem
+            }
+        </style>
+        <label>
+            <div>
+                <slot name="label"></slot>
+            </div>
+            <button>
+                <slot></slot>
+            </button>
+        </label>
+    </template>
+    <script src="/main.js" type="module"></script>
+</body>
+
+</html>
