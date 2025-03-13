@@ -411,3 +411,16 @@ The text 'MyBtn' slots into the unamed slot. This provides the button text.
 
 'Click Me' get inserted into the `'<slot name="label"></slot>'`
 forming the button's label.
+
+
+## main.js reaching into a shadow DOM
+Mode "open" when attaching a shadow DOM allows the brower's DOM to access the shadow DOM.
+
+.code 008/main.js /attachShadow/,/$/
+
+The element hosting the shadow DOM's is the shadow root. It has a shadowRoot property
+that can access the shadow DOM. See line 26 below.
+
+.code -numbers 008/main.js /function myBtnHandler/,/myBtnHandler/
+
+source: [main.js](https://github.com/siuyin/intro-html-css-js/blob/main/008/main.js)
