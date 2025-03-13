@@ -9,6 +9,7 @@ customElements.define("my-h2",
     }
 )
 
+
 customElements.define("my-btn",
     class extends HTMLElement {
         constructor() {
@@ -19,3 +20,10 @@ customElements.define("my-btn",
         }
     }
 )
+
+function myBtnHandler() {
+    const b = document.querySelector("my-btn")
+    const btn = b.shadowRoot.querySelector("button")
+    btn.addEventListener("click", () => console.log("MyBtn clicked"))
+}
+myBtnHandler()
