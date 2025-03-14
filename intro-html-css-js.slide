@@ -204,6 +204,10 @@ Elements within **nav** however, are placed in a column.
 .image 005/img/lorem.png  _ 1000
 
 
+## Updating page contents with javascript
+.code -numbers 005/index.html /script/,/\/script/
+
+
 ## Fixing browser back and forward buttons
 
 
