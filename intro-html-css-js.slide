@@ -446,7 +446,7 @@ The only get updated when we edit the file
 and push the changes to the folder where the server can see and serve them.
 
 There are many no-cost options for hosting a website.  
-Some of them include vercel, cloudfare pages and github pages.
+Some of them include vercel, cloudflare pages and github pages.
 
 I prefer github pages because I keep my files on github (https://github.com/)
 
