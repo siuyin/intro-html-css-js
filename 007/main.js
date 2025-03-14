@@ -65,7 +65,7 @@ function buildCatalogWith(items) {
 }
 
 async function buildCatalog() {
-    const dat = await fetch("/catalog.json")
+    const dat = await fetch("catalog.json")
     const items = await dat.json()
     buildCatalogWith(items)
 }
