@@ -445,3 +445,81 @@ There are many no-cost options for hosting a website.
 Some of them include vercel, cloudfare pages and github pages.
 
 I prefer github pages because I keep my files on github (https://github.com/)
+
+
+## Try out the web components site live on Github pages
+Visit: [https://siuyin.github.io/intro-html-css-js/008/index.html](https://siuyin.github.io/intro-html-css-js/008/index.html)
+
+Lets understand how this works.
+
+Github pages is powered by [jekyll](https://jekyllrb.com/) and github workflows.
+
+
+## Configuring your github repository for github pages to serve
+
+* Go to your repo and click on settings.
+
+.image 009/img/settings.png _ 800 
+
+* On the left side of the page click 'pages'
+
+.image 009/img/pages.png 300 _
+
+
+## Select a branch to serve
+I choose to serve my 'main' branch. This is typically what most people would do as
+the main branch is the 'production' branch.
+
+.image 009/img/branch.png
+
+
+## github 'pages build and deploy' action
+On each push to you main branch,  
+github will initiate an action to run the 'pages build and deploy' workflow.
+
+.image 009/img/actions.png 400 _
+
+
+## Website URL
+In my case it will be at [https://siuyin.github.io/intro-html-css-js/](https://siuyin.github.io/intro-html-css-js/) .
+
+And you should see something similar to the image below:
+
+.image 009/img/root.png 300 _
+
+github pages is serving the 'README.md' file on my repo.
+
+
+## To see the web components site
+We need to visit [https://siuyin.github.io/intro-html-css-js/008/](https://siuyin.github.io/intro-html-css-js/008/)
+
+github pages will then serve the 'index.html' in the '008' folder.
+
+But the site will initially not work properly. CSS and javascript were not properly loaded.
+
+.code 008/index.html /link href/,/$/
+
+.code 008/index.html /script src/,/$/
+
+`index.html` is asking to load main.css from  
+'https://siuyin.github.io/intro-html-css-js/main.css'
+and main.js from  
+'https://siuyin.github.io/intro-html-css-js/main.js'
+
+These files do not exist. They are actually located in 008/main.css and 008/main.js .
+
+
+## _config.yaml jekyll configuration file
+We need to tell github pages buider -- 'jekyll' where the baseurl is:
+
+[_config.yml](https://github.com/siuyin/intro-html-css-js/blob/main/_config.yml):
+
+.code _config.yml 
+
+The above jekyll configuration directive says that if 'index.html' asks for 'main.css',  
+look for it in '/intro-html-css-js/008/main.css' .
+
+
+## Code and presentation slides.
+
+[https://github.com/siuyin/intro-html-css-js](https://github.com/siuyin/intro-html-css-js)
