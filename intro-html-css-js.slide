@@ -16,6 +16,7 @@ siuyin@beyondbroadcast.com
 1. Managing Web browser history (back and foward buttons) -- web server required
 1. Custom events applied in an e-commerce demo
 1. Web components and styling
+1. Deploying your website
 
 ## 1. Just HTML and the browser
 Create this [index.html](https://github.com/siuyin/intro-html-css-js/blob/main/001/index.html) file:
@@ -432,3 +433,15 @@ See line 26 below.
 .code -numbers 008/main.js /function myBtnHandler/,/myBtnHandler/
 
 source: [main.js](https://github.com/siuyin/intro-html-css-js/blob/main/008/main.js)
+
+
+## 9. Deploying your website.
+What we have built thus far is typically known as a 'static' website.  
+This is because the files and assets like images are fixed.  
+The only get updated when we edit the file   
+and push the changes to the folder where the server can see and serve them.
+
+There are many no-cost options for hosting a website.  
+Some of them include vercel, cloudfare pages and github pages.
+
+I prefer github pages because I keep my files on github (https://github.com/)
