@@ -1,0 +1,28 @@
+<template id="mybtn">
+    <style>
+        button {
+            font-size: xx-large;
+            border-radius: 8px;
+            background-color: lightpink;
+            margin: 0
+        }
+
+        button:active {
+            color: aliceblue;
+            background-color: red
+        }
+
+        label {
+            display: inline-block;
+            margin: 0 1rem 0 1rem
+        }
+    </style>
+    <label>
+        <div>
+            <slot name="label"></slot>
+        </div>
+        <button>
+            <slot></slot>
+        </button>
+    </label>
+</template>
