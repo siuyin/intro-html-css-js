@@ -544,4 +544,19 @@ run with cd 010; ../webserver
 
 
 ## 11. javascript modules
-.code 011/index.html
+.code -numbers 011/index.html /import/,/== v.r/+1
+
+Lines 4 through 5 defines a single test.  
+With a bit more effort we can have a table of tests as seen above.
+
+
+## funcs.js
+.code 011/funcs.js
+
+And the remaining tests:
+
+.code -numbers 011/index.html /a: 3/-2,/\/script/-1
+
+
+## On running the tests
+.image 011/img/testrun.png 360 _
