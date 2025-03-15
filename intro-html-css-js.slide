@@ -527,3 +527,17 @@ look for it in '/intro-html-css-js/008/main.css' .
 ## Code and presentation slides.
 
 [https://github.com/siuyin/intro-html-css-js](https://github.com/siuyin/intro-html-css-js)
+
+
+## Additional content added 15 Mar 2025
+
+10. Assertions with console.Assertions
+1. imports and exports with javascript modules
+
+
+## 10. Assertions
+.code 010/index.html
+
+run with cd 010; ../webserver
+
+.image 010/img/assert.png
