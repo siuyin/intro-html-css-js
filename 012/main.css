@@ -3,3 +3,8 @@ body {
     font-size: x-large;
     margin-left: 1rem;
 }
+
+my-h2,
+my-btn {
+    display: none;
+}

@@ -7,7 +7,9 @@ customElements.define("my-btn",
             super()
             const tpl = document.getElementById("mybtn")
             const shadowRoot = this.attachShadow({ mode: "open" })
-            shadowRoot.append(tpl.content.cloneNode(true))
+            const n = tpl.content.cloneNode(true)
+            shadowRoot.append(n)
+            this.style.display="block"
         }
     }
 )
