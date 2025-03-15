@@ -1,0 +1,27 @@
+<script type="module">
+    import * as f from "./funcs.js"
+
+    let val = f.add(2, 3)
+    console.assert(val == 5, `add: 2+3 should be 5, got:${val}`)
+
+    let dat = [
+        { a: 2, b: 3, r: 5 },
+        { a: 2, b: 4, r: 7 },
+        { a: 1, b: 2, r: 3 },
+    ]
+    dat.forEach(v => {
+        val = f.add(v.a, v.b)
+        console.assert(val == v.r, `add: ${v.a} + ${v.b} should be ${v.r}, got: ${val}`)
+    })
+
+    dat = [
+        { a: 3, b: 4, r: 1 },
+        { a: 4, b: 4, r: 0 },
+        { a: 4, b: 5, r: -1 },
+        { a: 4, b: 5, r: 1 },
+    ]
+    dat.forEach(v => {
+        val = f.sub(v.a, v.b)
+        console.assert(val == v.r, `sub: ${v.a} - ${v.b} should be ${v.r}, got: ${val}`)
+    })
+</script>
