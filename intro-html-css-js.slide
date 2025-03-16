@@ -524,15 +524,11 @@ The above jekyll configuration directive says that if 'index.html' asks for 'mai
 look for it in '/intro-html-css-js/008/main.css' .
 
 
-## Code and presentation slides.
-
-[https://github.com/siuyin/intro-html-css-js](https://github.com/siuyin/intro-html-css-js)
-
-
 ## Additional content added 15 Mar 2025
 
 10. Assertions with console.Assertions
 1. imports and exports with javascript modules
+1. Web components implemented with javascript modules
 
 
 ## 10. Assertions
@@ -560,3 +556,59 @@ And the remaining tests:
 
 ## On running the tests
 .image 011/img/testrun.png 360 _
+
+
+## 12. Web Components implemented with javascript modules
+.code 012/index.html /body/,/\/body/
+
+The `'my-h2'` and `'my-btn'` components are implemented with 
+corresponding javascript modules.
+
+demo: `cd 012; ../webserver`
+
+
+## my-h2 components
+.code 012/myh2.js
+
+The first thing run is 'insTemplate'.  
+It inserts the contents of 'myh2.html' into an element with id="tpl" in index.html .
+
+.code 012/index.html /tpl/,/$/
+
+
+## insTemplate
+insTemplates uses the `fetch()` web API to fetch the text contents of 
+'filename' to append to the host element with 'id'.
+
+.code 012/insert.js
+
+Let continue with the 'my-h2' custom web component.
+
+## my-h2
+.code -numbers 012/myh2.js
+
+The constructor creates a shadow root hosted by the 
+'my-h2' element being constructed in index.html .
+
+Line 12 is needed to prevent flashing elements being contructed before they are ready.
+
+
+## Hiding construction of custom web Components
+[main.css](https://github.com/siuyin/intro-html-css-js/blob/main/012/main.css):
+
+.code -numbers 012/main.css
+
+Lines 7 through 10 tells the browser not to display (render) the elements.  
+The are still however in the DOM, just not displayed.
+
+
+## my-btn
+`<my-btn>` is similar to `<my-h2>` except it has a click handler that reaches into the shadow DOM
+via 'shadowRoot' see Line 19.
+
+.code -numbers 012/mybtn.js /define/,/^myBtnHandler/
+
+
+## Code and presentation slides.
+
+[https://github.com/siuyin/intro-html-css-js](https://github.com/siuyin/intro-html-css-js)
