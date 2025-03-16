@@ -21,8 +21,12 @@ func main() {
 
 func mdHandler(w http.ResponseWriter, r *http.Request) {
 	txt := `# This is markdown
-The quick brown fox jumps over the lazy dog.
-Next we have a list:
+The quick brown fox jumps over the lazy dog.  
+The rain in spain falls mainly on the plain.  
+A stitch in time saves nine.  
+The cat sat on the mat.
+
+Next we have an ordered list:
 1. a
 1. b
 1. c
