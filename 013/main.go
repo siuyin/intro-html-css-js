@@ -39,6 +39,7 @@ And a bullet list:
 `
 	p := strings.Split(txt, " ")
 	w.Header().Set("Transfer-Encoding", "chunked")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	f, _ := w.(http.Flusher)
 	for _, wd := range p {
 		io.WriteString(w, wd+" ")
