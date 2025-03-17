@@ -614,6 +614,35 @@ via 'shadowRoot' see Line 19.
 Generative AI with Large Language Models can take many seconds to complete their output.  
 To improve user experience we should stream the response.
 
+[main.go](https://github.com/siuyin/intro-html-css-js/blob/main/013/main.go):
+
+.code 013/main.go /Split/,/\t}$/
+
+The above code simulate a slow responding LLM.  
+A linux x86-64 binary is
+available in `013/streamer`.
+
+`cd 013; ./streamer`
+
+
+## chunked update
+[index.html](https://github.com/siuyin/intro-html-css-js/blob/main/013/html/index.html):
+
+.code 013/html/index.html /body/,/\/body/
+
+There is a section to hold the streamed response.
+
+Let's look at the javascript.
+
+
+## fetch and text decoding
+.code -numbers 013/html/main.js /mdHandler/,/innerHTML/+1
+
+In lines 7 and 8,  `<pre>` node is temporally inserted to hold the raw, unformatted markdown text.
+
+Each chunk of raw markdown is accummulated in variable `'md'`.
+
+Finally the markdown is parsed.
 
 ## Code and presentation slides.
 
