@@ -1,4 +1,4 @@
-export function EnvString(envvar, def) {
-    const s = Deno.env.get(envvar)
-    return s ? s : def
+export function EnvString(envVar, defaultVal) {
+    const s = Deno.env.get(envVar) // node.js: 'const s = process.env[envvar]'
+    return s ? s : defaultVal
 }
