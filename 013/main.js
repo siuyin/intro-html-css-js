@@ -43,24 +43,25 @@ And a bullet list:
     hdrs.set("Transfer-Encoding", "chunked")
     hdrs.set("Access-Control-Allow-Origin", "*")
 
-    const res = new Response(mdStream(txt), { headers: hdrs })
+    const res = new Response(slowStream(txt, 150), { headers: hdrs })
     return res
 }
 
 import { delay } from "@std/async"
-function mdStream(txt) {
+function slowStream(txt, dly) {
     const p = txt.split(" ")
     const en = new TextEncoder()
     let n = 0
-
-    return new ReadableStream({
-        async pull(ctrl) {
+    const rs = new ReadableStream({
+        async pull(streamControl) {
             const wd = p[n] + " "
-            if (n == p.length) { ctrl.close(); return }
+            if (n == p.length) { streamControl.close(); return }
 
-            ctrl.enqueue(en.encode(wd))
-            await delay(150)
+            streamControl.enqueue(en.encode(wd))
+            await delay(dly)
             n++
         }
     })
+
+    return rs
 }
