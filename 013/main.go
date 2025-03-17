@@ -20,7 +20,7 @@ func main() {
 }
 
 func mdHandler(w http.ResponseWriter, r *http.Request) {
-	txt := `# This is markdown
+	const txt = `# This is markdown
 The quick brown fox jumps over the lazy dog.  
 The rain in spain falls mainly on the plain.  
 A stitch in time saves nine.  
