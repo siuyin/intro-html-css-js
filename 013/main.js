@@ -47,7 +47,7 @@ And a bullet list:
     return res
 }
 
-import { delay } from "./delay.js"
+import { delay } from "@std/async"
 function mdStream(txt) {
     const p = txt.split(" ")
     const en = new TextEncoder()
