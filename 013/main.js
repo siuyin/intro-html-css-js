@@ -1,7 +1,7 @@
 import { serveDir } from "@std/http/file-server"
 import { EnvString } from "dflt"
 function main() {
-    function mainHandler(req) {
+    const mainHandler = (req) => {
         const path = new URL(req.url).pathname;
 
         if (path === "/md") {
