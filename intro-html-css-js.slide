@@ -530,6 +530,7 @@ look for it in '/intro-html-css-js/008/main.css' .
 1. imports and exports with javascript modules
 1. Web components implemented with javascript modules
 1. Handling streaming responses
+1. javascript for backend servers
 
 
 ## 10. Assertions
@@ -643,6 +644,38 @@ In lines 7 and 8,  `<pre>` node is temporally inserted to hold the raw, unformat
 Each chunk of raw markdown is accummulated in variable `'md'`.
 
 Finally the markdown is parsed.
+
+
+## 14. How about javascript in the backend?
+javascript runs on many browsers because browsers have a javascript engine.  
+Similarly, to run javascript on a backend server, you also need a javascript engine.
+
+The most common "engine"/platform is nodejs.  
+But there are others like Deno and Bun.
+
+Just like browser javascript has Web APIs (eg. document.getElementById etc.),  
+each platform has their set of supporting libraries and APIs.
+
+As nodejs is the most established, both Deno and Bun strive to be compatible with nodejs.
+However there will be differences.
+
+
+## Pros and Cons of using javascript in the backend
+Pro:  
+1. If you already use javascript for the frontend, you can leverage your knowledge for writing backend code.
+1. Many of Web API classes and functions like Request, Response and fetch() are supported by nodejs, deno etc.
+1. javascript engines are fast and excel at input/output bound tasks.
+
+Con:
+1. javascript is single threaded and performs poorly with compute intensive tasks.
+1. javascript is dynamically typed (let a=2; a="two" will not cause an error).
+1. other languages like `rust`: no garbage collection and memory safety,  
+   or `go`: strongly typed, excellent concurrency, are often faster than javascript.
+
+
+## Streaming server coded in javascript/deno
+[main.js]()
+
 
 ## Code and presentation slides.
 
