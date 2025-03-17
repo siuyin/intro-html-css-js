@@ -661,8 +661,8 @@ However there will be differences.
 
 
 ## Pros and Cons of using javascript in the backend
-Pro:  
-1. If you already use javascript for the frontend, you can leverage your knowledge for writing backend code.
+Pro:
+1. If you know javascript, you can use it in the backend.
 1. Many of Web API classes and functions like Request, Response and fetch() are supported by nodejs, deno etc.
 1. javascript engines are fast and excel at input/output bound tasks.
 
@@ -672,9 +672,60 @@ Con:
 1. other languages like `rust`: no garbage collection and memory safety,  
    or `go`: strongly typed, excellent concurrency, are often faster than javascript.
 
+Deno understands both javascript and typescript *without* any add-ons.
+
 
 ## Streaming server coded in javascript/deno
-[main.js]()
+[main.js](https://github.com/siuyin/intro-html-css-js/blob/main/014/main.js):
+
+.code 014/main.js /import/,/^main/
+
+
+## javacript repository
+.code 014/main.js /import/,/dflt/
+
+The 'import's look familiar but what is '@std/http...' all about?
+
+[deno.json](https://github.com/siuyin/intro-html-css-js/blob/main/014/deno.json):
+
+.code 014/deno.json
+
+'deno.json' tells the deno platform about the dependencies required to run 'main.js' .
+
+
+## Differences between deno and nodejs
+[dflt.js](https://github.com/siuyin/intro-html-css-js/blob/main/014/dflt.js):
+
+.code 014/dflt.js
+
+
+## mdHandler
+.code -numbers 014/main.js /const path/,/mdHandler/+1
+
+.code -numbers 014/main.js /function mdHandler/,+1
+
+    ...
+
+.code -numbers 014/main.js /hdrs/,/^}/
+
+`'req'` is a Web API `Request` and `'res'` is a `Response` 
+
+
+## slowStream
+.code -numbers 014/main.js /delay/-2,/^}/
+
+`'ReadableStream'` is from the Web API. It has a `'pull'` method that is called
+when its stream buffer has space for more data.
+`'delay'` is from deno's standard library.
+
+
+## pull
+.code -numbers 014/main.js /pull/,/}\)/
+
+Line 57: close the stream if we have no more words.  
+Line 59: enqueue words, encoded as UTF-8 text, on to the stream  
+Line 60: delay. For node.js: `import {setTimeout} from   
+'node:timers/promises'; await setTimeout(dly)`
 
 
 ## Code and presentation slides.

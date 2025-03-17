@@ -21,7 +21,6 @@ main()
 
 
 function mdHandler(req) {
-
     const txt = `# This is markdown on \`Deno\`
 The quick brown fox jumps over the lazy dog.  
 The rain in spain falls mainly on the plain.  
