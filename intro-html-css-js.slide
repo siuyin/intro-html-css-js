@@ -692,6 +692,8 @@ The 'import's look familiar but what is '@std/http...' all about?
 
 'deno.json' tells the deno platform about the dependencies required to run 'main.js' .
 
+`cd 014; deno --allow-net --allow-env --allow-read main.js`
+
 
 ## Differences between deno and nodejs
 [dflt.js](https://github.com/siuyin/intro-html-css-js/blob/main/014/dflt.js):
@@ -720,12 +722,22 @@ when its stream buffer has space for more data.
 
 
 ## pull
-.code -numbers 014/main.js /pull/,/}\)/
+[main.js](https://github.com/siuyin/intro-html-css-js/blob/main/014/main.js):
+
+.code -numbers 014/main.js /pull/,/await delay/+2
 
 Line 57: close the stream if we have no more words.  
 Line 59: enqueue words, encoded as UTF-8 text, on to the stream  
 Line 60: delay. For node.js: `import {setTimeout} from   
 'node:timers/promises'; await setTimeout(dly)`
+
+## equivalent code in Go
+[main.go](https://github.com/siuyin/intro-html-css-js/blob/main/013/main.go):
+
+.code -numbers 013/main.go /Flusher/,/^\t}/
+
+Line 43: make w (ResponseWriter), flushable  
+Line 47: Flush after each word is written
 
 
 ## Code and presentation slides.
